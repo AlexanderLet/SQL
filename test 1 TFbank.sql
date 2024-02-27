@@ -1,12 +1,12 @@
-Тестовые данные таблицы
+/*Тестовые данные таблицы*/
 
 CREATE TABLE payments (
-id bigint PRIMARY KEY,       --ID операции
-status varchar(20) NOT NULL, --Статус операции
-amount number(10) NOT NULL,  --Сумма операции в копейках
-fee number(10) NOT NULL,     --Комиссия за операцию в копейках
-shop_id number(10) NOT NULL, --ID магазина
-type_pay varchar(20)         --Типоперации
+  id bigint PRIMARY KEY,       --ID операции
+  status varchar(20) NOT NULL, --Статус операции
+  amount number(10) NOT NULL,  --Сумма операции в копейках
+  fee number(10) NOT NULL,     --Комиссия за операцию в копейках
+  shop_id number(10) NOT NULL, --ID магазина
+  type_pay varchar(20)         --Типоперации
 );
 
 
