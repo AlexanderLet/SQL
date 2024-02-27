@@ -1,4 +1,4 @@
-/*Тестовые данные*/
+/*Тестовые таблицы*/
 
 CREATE TABLE payments (
   id bigint PRIMARY KEY,       --ID операции
@@ -8,7 +8,6 @@ CREATE TABLE payments (
   shop_id number(10) NOT NULL, --ID магазина
   type_pay varchar(20)         --Типоперации
 );
-
 
 INSERT INTO payments (id, status, amount, fee, shop_id, type_pay) VALUES
   (500, 'CONFIRMED', 10000, 3000, 211, 'ApplePay'),
@@ -22,8 +21,6 @@ INSERT INTO payments (id, status, amount, fee, shop_id, type_pay) VALUES
   (508, 'REFUNDED', 67691, 4795, 344, 'Card'),
   (509, 'REFUNDED', 39166, 3702, 211, 'ApplePay'),
   (510, 'CONFIRMED', 34126, 3442, 211, '');
-
-
 
 CREATE TABLE shop (
   id bigint PRIMARY KEY,        --ID магазина
