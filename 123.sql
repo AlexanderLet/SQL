@@ -1,3 +1,5 @@
+
+
 /*Вывести все операции по ApplePay, по которым не было возвратов.*/
 Select shop.*
 from shop
@@ -37,3 +39,21 @@ where type_pay = '';
 INSERT INTO shop (id, name, status, url) 
 VALUES
 (256, 'Aples', 'Activ', 'https://Aples.com');
+
+/*Посчитай количество по типам оплаты.*/
+select count(type_pay), type_pay  
+from payments
+group by type_pay;
+
+/*Посчитай сумму возвратов по магазину “Aples”*/
+select SUM(payments.amount) As aples_refunded_sum
+from shop
+JOIN payments ON shop.id = payments.shop_id
+where payments.status = 'REFUNDED' and shop.name =  'Aples'
+group by shop.id;
+
+/*Выведи средний чек(суммы операций) по магазину “Aples”*/
+select AVG(payments.amount) As aples_amount_avg
+from shop
+JOIN payments ON shop.id = payments.shop_id
+where shop.name = 'Aples';
